@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azerbaijan Real Estate Investment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-straight/css/uicons-thin-straight.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="container navbar-container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="assets/image.png"
+              alt="Azerbaijan Real Estate Investment Logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <div class="right-group">
+          <nav class="nav-links">
+            <ul>
+              <li><a href="catalog.html">Catalog</a></li>
+              <li><a href="#">About Company</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Partners</a></li>
+            </ul>
+          </nav>
+          <div class="auth-button">
+            <div class="currency-dropdown">
+              <a
+                href="#"
+                class="btn-login btn-login-currency dropdown-toggle"
+                id="currency-btn"
+              >
+                <i class="fi fi-rr-dollar"></i>USD</a
+              >
+              <div class="dropdown-menu" id="currency-menu">
+                <a href="#" class="btn-login btn-login-currency dropdown-item"
+                  ><i class="fi fi-rr-euro"></i>EUR</a
+                >
+                <a href="#" class="btn-login btn-login-currency dropdown-item"
+                  ><i class="fi fi-rr-pound"></i>GBP</a
+                >
+                <a href="#" class="btn-login btn-login-currency dropdown-item"
+                  ><i class="fi fi-rr-yen"></i>JPY</a
+                >
+              </div>
+            </div>
+            <a href="#" class="btn-login"
+              ><i class="fi fi-rr-phone-call"></i> Book A Tour</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Catalog Header -->
+    <section class="catalog-header">
+      <div class="container">
+        <h1>Property Catalog</h1>
+        <p>Discover our exclusive selection of premium properties across Azerbaijan</p>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-container catalog-form">
+          <form class="advanced-search-form">
+            <div class="search-row">
+              <div class="search-group">
+                <label for="property-type">Property Type</label>
+                <select id="property-type" name="property-type">
+                  <option value="">All Types</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="house">House</option>
+                  <option value="villa">Villa</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="land">Land</option>
+                </select>
+              </div>
+              <div class="search-group">
+                <label for="location">Location</label>
+                <select id="location" name="location">
+                  <option value="">All Locations</option>
+                  <option value="baku">Baku</option>
+                  <option value="ganja">Ganja</option>
+                  <option value="sumqayit">Sumqayit</option>
+                  <option value="lankaran">Lankaran</option>
+                  <option value="qabala">Qabala</option>
+                </select>
+              </div>
+              <div class="search-group">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                  <option value="">All Status</option>
+                  <option value="for-sale">For Sale</option>
+                  <option value="for-rent">For Rent</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="search-row">
+              <div class="search-group">
+                <label for="min-price">Min Price</label>
+                <input type="number" id="min-price" name="min-price" placeholder="Min $">
+              </div>
+              <div class="search-group">
+                <label for="max-price">Max Price</label>
+                <input type="number" id="max-price" name="max-price" placeholder="Max $">
+              </div>
+              <div class="search-group">
+                <label for="bedrooms">Bedrooms</label>
+                <select id="bedrooms" name="bedrooms">
+                  <option value="">Any</option>
+                  <option value="1">1+</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
+                  <option value="5">5+</option>
+                </select>
+              </div>
+              <div class="search-group">
+                <label for="bathrooms">Bathrooms</label>
+                <select id="bathrooms" name="bathrooms">
+                  <option value="">Any</option>
+                  <option value="1">1+</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="search-row">
+              <div class="search-group">
+                <label for="min-area">Min Area (m²)</label>
+                <input type="number" id="min-area" name="min-area" placeholder="Min Area">
+              </div>
+              <div class="search-group">
+                <label for="max-area">Max Area (m²)</label>
+                <input type="number" id="max-area" name="max-area" placeholder="Max Area">
+              </div>
+              <div class="search-group features-group">
+                <label>Features</label>
+                <div class="features-checkboxes">
+                  <label><input type="checkbox" name="feature" value="pool"> Pool</label>
+                  <label><input type="checkbox" name="feature" value="garage"> Garage</label>
+                  <label><input type="checkbox" name="feature" value="garden"> Garden</label>
+                  <label><input type="checkbox" name="feature" value="security"> Security</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="search-buttons">
+              <button type="submit" class="search-btn">Search Properties</button>
+              <button type="reset" class="reset-btn">Reset Filters</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="catalog-properties">
+      <div class="container">
+        <div class="catalog-tools">
+          <div class="results-count">
+            <p><strong>24</strong> properties found</p>
+          </div>
+          <div class="sorting">
+            <label for="sort-options">Sort by:</label>
+            <select id="sort-options">
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price (Low to High)</option>
+              <option value="price-desc">Price (High to Low)</option>
+              <option value="area-asc">Area (Small to Large)</option>
+              <option value="area-desc">Area (Large to Small)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="catalog-grid">
+          <!-- Property 1 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Modern Apartment in Baku"
+              />
+              <div class="property-tag">For Sale</div>
+            </div>
+            <div class="property-details">
+              <h3>Modern Apartment in Baku</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Baku, Azerbaijan
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-bed"></i> 2 Beds</span>
+                <span><i class="fi fi-rr-bath"></i> 2 Baths</span>
+                <span><i class="fi fi-rr-ruler"></i> 120 m²</span>
+              </div>
+              <div class="property-price">$250,000</div>
+            </div>
+          </div>
+
+          <!-- Property 2 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Luxury Villa in Baku"
+              />
+              <div class="property-tag rent">For Rent</div>
+            </div>
+            <div class="property-details">
+              <h3>Luxury Villa in Baku</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Badamdar, Baku
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-bed"></i> 5 Beds</span>
+                <span><i class="fi fi-rr-bath"></i> 4 Baths</span>
+                <span><i class="fi fi-rr-ruler"></i> 350 m²</span>
+              </div>
+              <div class="property-price">$3,500/mo</div>
+            </div>
+          </div>
+
+          <!-- Property 3 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="City Center Office Space"
+              />
+              <div class="property-tag">For Sale</div>
+            </div>
+            <div class="property-details">
+              <h3>City Center Office Space</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Downtown, Baku
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-building"></i> Office</span>
+                <span><i class="fi fi-rr-ruler"></i> 180 m²</span>
+              </div>
+              <div class="property-price">$420,000</div>
+            </div>
+          </div>
+
+          <!-- Property 4 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Beachfront Residence in Lankaran"
+              />
+              <div class="property-tag rent">For Rent</div>
+            </div>
+            <div class="property-details">
+              <h3>Beachfront Residence in Lankaran</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Lankaran, Azerbaijan
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-bed"></i> 3 Beds</span>
+                <span><i class="fi fi-rr-bath"></i> 2 Baths</span>
+                <span><i class="fi fi-rr-ruler"></i> 150 m²</span>
+              </div>
+              <div class="property-price">$1,200/mo</div>
+            </div>
+          </div>
+
+          <!-- Property 5 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Mountain View Villa in Qabala"
+              />
+              <div class="property-tag">For Sale</div>
+            </div>
+            <div class="property-details">
+              <h3>Mountain View Villa in Qabala</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Qabala, Azerbaijan
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-bed"></i> 4 Beds</span>
+                <span><i class="fi fi-rr-bath"></i> 3 Baths</span>
+                <span><i class="fi fi-rr-ruler"></i> 280 m²</span>
+              </div>
+              <div class="property-price">$380,000</div>
+            </div>
+          </div>
+
+          <!-- Property 6 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Seaside Apartment in Sumqayit"
+              />
+              <div class="property-tag rent">For Rent</div>
+            </div>
+            <div class="property-details">
+              <h3>Seaside Apartment in Sumqayit</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Sumqayit, Azerbaijan
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-bed"></i> 2 Beds</span>
+                <span><i class="fi fi-rr-bath"></i> 1 Bath</span>
+                <span><i class="fi fi-rr-ruler"></i> 85 m²</span>
+              </div>
+              <div class="property-price">$850/mo</div>
+            </div>
+          </div>
+
+          <!-- Property 7 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Modern Penthouse in Baku"
+              />
+              <div class="property-tag">For Sale</div>
+            </div>
+            <div class="property-details">
+              <h3>Modern Penthouse in Baku</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Flame Towers, Baku
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-bed"></i> 3 Beds</span>
+                <span><i class="fi fi-rr-bath"></i> 2 Baths</span>
+                <span><i class="fi fi-rr-ruler"></i> 210 m²</span>
+              </div>
+              <div class="property-price">$650,000</div>
+            </div>
+          </div>
+
+          <!-- Property 8 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Commercial Space in Ganja"
+              />
+              <div class="property-tag rent">For Rent</div>
+            </div>
+            <div class="property-details">
+              <h3>Commercial Space in Ganja</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Ganja, Azerbaijan
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-building"></i> Commercial</span>
+                <span><i class="fi fi-rr-ruler"></i> 320 m²</span>
+              </div>
+              <div class="property-price">$2,800/mo</div>
+            </div>
+          </div>
+
+          <!-- Property 9 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Family House in Sumqayit"
+              />
+              <div class="property-tag">For Sale</div>
+            </div>
+            <div class="property-details">
+              <h3>Family House in Sumqayit</h3>
+              <div class="property-location">
+                <i class="fi fi-rr-marker"></i> Sumqayit, Azerbaijan
+              </div>
+              <div class="property-features">
+                <span><i class="fi fi-rr-bed"></i> 4 Beds</span>
+                <span><i class="fi fi-rr-bath"></i> 3 Baths</span>
+                <span><i class="fi fi-rr-ruler"></i> 240 m²</span>
+              </div>
+              <div class="property-price">$320,000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of property listings -->
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Invest in Azerbaijan's Growing Real Estate Market?</h2>
+          <p>
+            Schedule a consultation with our expert team to discover prime
+            investment opportunities tailored to your goals.
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn-primary">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Company Info -->
+          <div class="footer-column company-info">
+            <a href="index.html" class="footer-logo">
+              <img
+                src="assets/image.png"
+                alt="Azerbaijan Real Estate Investment"
+              />
+            </a>
+            <p>
+              Premier real estate investment and consultancy firm specializing
+              in Azerbaijan's dynamic property market.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Properties</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Investment Guide</a></li>
+              <li><a href="#">Market Analysis</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul class="footer-links">
+              <li><a href="#">Property Investment</a></li>
+              <li><a href="#">Market Research</a></li>
+              <li><a href="#">Property Management</a></li>
+              <li><a href="#">Legal Consultation</a></li>
+              <li><a href="#">Portfolio Development</a></li>
+              <li><a href="#">Client Support</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-column contact-info">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>
+                <i class="fi fi-rr-marker"></i>
+                <span>28 May St, Baku, Azerbaijan</span>
+              </li>
+              <li>
+                <i class="fi fi-rr-phone-call"></i>
+                <span>+994 12 345 67 89</span>
+              </li>
+              <li>
+                <i class="fi fi-rr-envelope"></i>
+                <span>info@azerbaijanrealestate.com</span>
+              </li>
+              <li>
+                <i class="fi fi-rr-time-check"></i>
+                <span>Mon-Fri: 9AM - 6PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Azerbaijan Real Estate Investment. All Rights Reserved.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookies Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/994000000000"
+      class="whatsapp-button"
+      id="whatsappBtn"
+      target="_blank"
+    >
+      <img
+        src="assets/whatsapp-logo.png"
+        alt="WhatsApp"
+        class="whatsapp-icon"
+      />
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top-button" id="backToTopBtn">
+      <svg class="back-to-top-icon" viewBox="0 0 384 512">
+        <path
+          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
