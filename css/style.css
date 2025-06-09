@@ -197,13 +197,30 @@ a {
   border-bottom: 1px solid #ddd;
 }
 
+.dropdown-item span {
+  transition: all 0.3s;
+}
+
+.dropdown-item img {
+  transition: all 0.3s;
+}
+
+.dropdown-item:hover img,
+.dropdown-item:hover svg {
+  filter: brightness(0) invert(1) !important;
+}
+
 .dropdown-item:last-child {
   border-bottom: none;
 }
 
 .dropdown-item:hover {
   background-color: #8b0000;
-  color: white;
+  color: white !important;
+}
+
+.dropdown-item:hover span {
+  color: white !important;
 }
 
 .dropdown-item i {
@@ -212,6 +229,20 @@ a {
   display: inline-block;
   width: 16px; /* Fixed width for the icon */
   text-align: center;
+}
+
+.dropdown-item img,
+.dropdown-item svg {
+  margin-right: 10px !important;
+  vertical-align: middle;
+}
+
+.currency-svg-icon {
+  transition: all 0.3s;
+}
+
+.dirham-icon {
+  vertical-align: middle;
 }
 
 /* Featured Properties Section */
