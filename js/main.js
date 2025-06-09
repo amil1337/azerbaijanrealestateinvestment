@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Currency dropdown functionality
   const currencyBtn = document.getElementById('currency-btn');
   const currencyMenu = document.getElementById('currency-menu');
   
@@ -117,6 +118,44 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close the dropdown
         currencyMenu.classList.remove('show');
         currencyBtn.classList.remove('active');
+      });
+    });
+  }
+  
+  // Language dropdown functionality
+  const languageBtn = document.getElementById('language-btn');
+  const languageMenu = document.getElementById('language-menu');
+  
+  if (languageBtn && languageMenu) {
+    // Toggle dropdown on button click
+    languageBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      languageMenu.classList.toggle('show');
+      languageBtn.classList.toggle('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!languageBtn.contains(e.target) && !languageMenu.contains(e.target)) {
+        languageMenu.classList.remove('show');
+        languageBtn.classList.remove('active');
+      }
+    });
+    
+    // Allow selecting languages
+    const languageItems = languageMenu.querySelectorAll('.dropdown-item');
+    languageItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the language text from the clicked item
+        const languageText = this.textContent.trim();
+        // Update the button text
+        languageBtn.innerHTML = this.innerHTML;
+        
+        // Close the dropdown
+        languageMenu.classList.remove('show');
+        languageBtn.classList.remove('active');
       });
     });
   }

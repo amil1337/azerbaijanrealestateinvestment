@@ -141,6 +141,14 @@ a {
     min-width: 120px;
 }
 
+#language-btn {
+    min-width: 140px !important;
+}
+
+#language-btn .dropdown-menu {
+    min-width: 140px !important;
+}
+
 .dropdown-menu {
   position: absolute;
   color: #8b0000 !important;
