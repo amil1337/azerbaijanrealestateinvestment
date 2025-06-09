@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: #8b0000;
+  color: white;
+}
+
 body {
   font-family: "Inter Tight", sans-serif;
   color: #333;
