@@ -34,6 +34,180 @@
     />
   </head>
 
+  <!-- Add necessary CSS for the new filter UI -->
+  <style>
+    /* Card-based Filter Layout */
+    .filter-cards-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .filter-cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .filter-card {
+      flex: 1;
+      min-width: 200px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      padding: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-card:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .double-width {
+      flex: 2;
+    }
+    
+    .filter-card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .filter-card-header i {
+      margin-right: 8px;
+      color: #8b0000;
+    }
+    
+    .filter-card-header h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    .filter-card-body select,
+    .filter-card-body input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    /* Range Sliders */
+    .range-slider-container {
+      padding: 10px 5px;
+    }
+    
+    .price-slider,
+    .area-slider {
+      height: 5px;
+      background: #e0e0e0;
+      border-radius: 5px;
+      position: relative;
+      margin: 15px 0 25px;
+    }
+    
+    .price-slider .ui-slider-range,
+    .area-slider .ui-slider-range {
+      height: 5px;
+      background: #8b0000;
+      position: absolute;
+    }
+    
+    .price-slider .ui-slider-handle,
+    .area-slider .ui-slider-handle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #8b0000;
+      position: absolute;
+      margin-left: -9px;
+      margin-top: -7px;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    
+    .price-values,
+    .area-values {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    /* Advanced Filters Toggle - Redesigned */
+    .advanced-filters-toggle {
+      text-align: center;
+      margin: 25px 0 15px;
+    }
+    
+    .toggle-btn {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      color: #8b0000;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 25px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .toggle-btn:hover {
+      background-color: #f0f0f0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+    
+    .toggle-icon {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1;
+    }
+    
+    .advanced-filters {
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 15px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .features-checkboxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 5px;
+    }
+    
+    .features-checkboxes label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+    
+    .features-checkboxes input[type="checkbox"] {
+      margin-right: 5px;
+      width: auto;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .filter-cards-row {
+        flex-direction: column;
+      }
+      
+      .filter-card {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+
   <body>
     <!-- Navigation Bar -->
     <header class="navbar">
@@ -117,87 +291,267 @@
       <div class="container">
         <div class="search-container catalog-form">
           <form class="advanced-search-form">
-            <div class="search-row">
-              <div class="search-group">
-                <label for="property-type">Property Type</label>
-                <select id="property-type" name="property-type">
-                  <option value="">All Types</option>
-                  <option value="apartment">Apartment</option>
-                  <option value="house">House</option>
-                  <option value="villa">Villa</option>
-                  <option value="commercial">Commercial</option>
-                  <option value="land">Land</option>
-                </select>
+            <!-- Card-Based Grid Layout for Filters -->
+            <div class="filter-cards-container">
+              <!-- First Row of Filter Cards -->
+              <div class="filter-cards-row">
+                <!-- Property Type Card -->
+                <div class="filter-card">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rs-house-building"></i>
+                    <h4>Property Type</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <select id="property-type" name="property-type">
+                      <option value="">All Types</option>
+                      <option value="apartment">Apartment</option>
+                      <option value="house">House</option>
+                      <option value="villa">Villa</option>
+                      <option value="commercial">Commercial</option>
+                      <option value="land">Land</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Location Card -->
+                <div class="filter-card">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rr-marker"></i>
+                    <h4>Location</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <select id="location" name="location">
+                      <option value="">All Locations</option>
+                      <option value="baku">Baku</option>
+                      <option value="ganja">Ganja</option>
+                      <option value="sumqayit">Sumqayit</option>
+                      <option value="lankaran">Lankaran</option>
+                      <option value="qabala">Qabala</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Status Card -->
+                <div class="filter-card">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rr-tags"></i>
+                    <h4>Status</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <select id="status" name="status">
+                      <option value="">All Status</option>
+                      <option value="for-sale">For Sale</option>
+                      <option value="for-rent">For Rent</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <div class="search-group">
-                <label for="location">Location</label>
-                <select id="location" name="location">
-                  <option value="">All Locations</option>
-                  <option value="baku">Baku</option>
-                  <option value="ganja">Ganja</option>
-                  <option value="sumqayit">Sumqayit</option>
-                  <option value="lankaran">Lankaran</option>
-                  <option value="qabala">Qabala</option>
-                </select>
+
+              <!-- Second Row of Filter Cards -->
+              <div class="filter-cards-row">
+                <!-- Price Range Card with Slider -->
+                <div class="filter-card double-width">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rr-dollar"></i>
+                    <h4>Price Range</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <div class="range-slider-container">
+                      <div class="price-slider" id="price-slider"></div>
+                      <div class="price-values">
+                        <span id="price-min-value">$100K</span>
+                        <span id="price-max-value">$500K</span>
+                      </div>
+                      <input type="hidden" id="min-price" name="min-price">
+                      <input type="hidden" id="max-price" name="max-price">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Area Range Card with Slider -->
+                <div class="filter-card double-width">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rr-ruler"></i>
+                    <h4>Area Range (m²)</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <div class="range-slider-container">
+                      <div class="area-slider" id="area-slider"></div>
+                      <div class="area-values">
+                        <span id="area-min-value">0 m²</span>
+                        <span id="area-max-value">500 m²</span>
+                      </div>
+                      <input type="hidden" id="min-area" name="min-area">
+                      <input type="hidden" id="max-area" name="max-area">
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="search-group">
-                <label for="status">Status</label>
-                <select id="status" name="status">
-                  <option value="">All Status</option>
-                  <option value="for-sale">For Sale</option>
-                  <option value="for-rent">For Rent</option>
-                </select>
+
+              <!-- Third Row of Filter Cards -->
+              <div class="filter-cards-row">
+                <!-- Bedrooms Card -->
+                <div class="filter-card">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rr-bed"></i>
+                    <h4>Bedrooms</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <select id="bedrooms" name="bedrooms">
+                      <option value="">Any</option>
+                      <option value="1">1+</option>
+                      <option value="2">2+</option>
+                      <option value="3">3+</option>
+                      <option value="4">4+</option>
+                      <option value="5">5+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Bathrooms Card -->
+                <div class="filter-card">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rr-bath"></i>
+                    <h4>Bathrooms</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <select id="bathrooms" name="bathrooms">
+                      <option value="">Any</option>
+                      <option value="1">1+</option>
+                      <option value="2">2+</option>
+                      <option value="3">3+</option>
+                      <option value="4">4+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Features Card -->
+                <div class="filter-card">
+                  <div class="filter-card-header">
+                    <i class="fi fi-rr-star"></i>
+                    <h4>Features</h4>
+                  </div>
+                  <div class="filter-card-body">
+                    <div class="features-checkboxes">
+                      <label><input type="checkbox" name="feature" value="pool"> Pool</label>
+                      <label><input type="checkbox" name="feature" value="garage"> Garage</label>
+                      <label><input type="checkbox" name="feature" value="garden"> Garden</label>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div class="search-row">
-              <div class="search-group">
-                <label for="min-price">Min Price</label>
-                <input type="number" id="min-price" name="min-price" placeholder="Min $">
-              </div>
-              <div class="search-group">
-                <label for="max-price">Max Price</label>
-                <input type="number" id="max-price" name="max-price" placeholder="Max $">
-              </div>
-              <div class="search-group">
-                <label for="bedrooms">Bedrooms</label>
-                <select id="bedrooms" name="bedrooms">
-                  <option value="">Any</option>
-                  <option value="1">1+</option>
-                  <option value="2">2+</option>
-                  <option value="3">3+</option>
-                  <option value="4">4+</option>
-                  <option value="5">5+</option>
-                </select>
-              </div>
-              <div class="search-group">
-                <label for="bathrooms">Bathrooms</label>
-                <select id="bathrooms" name="bathrooms">
-                  <option value="">Any</option>
-                  <option value="1">1+</option>
-                  <option value="2">2+</option>
-                  <option value="3">3+</option>
-                  <option value="4">4+</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="search-row">
-              <div class="search-group">
-                <label for="min-area">Min Area (m²)</label>
-                <input type="number" id="min-area" name="min-area" placeholder="Min Area">
-              </div>
-              <div class="search-group">
-                <label for="max-area">Max Area (m²)</label>
-                <input type="number" id="max-area" name="max-area" placeholder="Max Area">
-              </div>
-              <div class="search-group features-group">
-                <label>Features</label>
-                <div class="features-checkboxes">
-                  <label><input type="checkbox" name="feature" value="pool"> Pool</label>
-                  <label><input type="checkbox" name="feature" value="garage"> Garage</label>
-                  <label><input type="checkbox" name="feature" value="garden"> Garden</label>
-                  <label><input type="checkbox" name="feature" value="security"> Security</label>
+            
+            <!-- Advanced Filters Toggle - Redesigned -->
+            <div class="advanced-filters-toggle">
+              <button type="button" id="show-more-filters" class="toggle-btn">
+                Advanced Filters <span class="toggle-icon">+</span>
+              </button>
+              
+              <div class="advanced-filters" id="advanced-filters" style="display: none;">
+                <div class="filter-cards-row">
+                  <!-- Property View Card -->
+                  <div class="filter-card">
+                    <div class="filter-card-header">
+                      <i class="fi fi-rr-mountain"></i>
+                      <h4>Property View</h4>
+                    </div>
+                    <div class="filter-card-body">
+                      <div class="features-checkboxes">
+                        <label><input type="checkbox" name="view" value="sea"> Sea View</label>
+                        <label><input type="checkbox" name="view" value="mountain"> Mountain View</label>
+                        <label><input type="checkbox" name="view" value="city"> City View</label>
+                        <label><input type="checkbox" name="view" value="garden"> Garden View</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Amenities Card -->
+                  <div class="filter-card">
+                    <div class="filter-card-header">
+                      <i class="fi fi-rr-gym"></i>
+                      <h4>Amenities</h4>
+                    </div>
+                    <div class="filter-card-body">
+                      <div class="features-checkboxes">
+                        <label><input type="checkbox" name="amenities" value="gym"> Gym</label>
+                        <label><input type="checkbox" name="amenities" value="spa"> Spa</label>
+                        <label><input type="checkbox" name="amenities" value="concierge"> Concierge</label>
+                        <label><input type="checkbox" name="amenities" value="parking"> Parking</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Year Built Card -->
+                  <div class="filter-card">
+                    <div class="filter-card-header">
+                      <i class="fi fi-rr-calendar"></i>
+                      <h4>Year Built</h4>
+                    </div>
+                    <div class="filter-card-body">
+                      <select id="year-built" name="year-built">
+                        <option value="">Any</option>
+                        <option value="2020">2020+</option>
+                        <option value="2015">2015+</option>
+                        <option value="2010">2010+</option>
+                        <option value="2000">2000+</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="filter-cards-row">
+                  <!-- Security Features Card -->
+                  <div class="filter-card">
+                    <div class="filter-card-header">
+                      <i class="fi fi-rr-shield-check"></i>
+                      <h4>Security</h4>
+                    </div>
+                    <div class="filter-card-body">
+                      <div class="features-checkboxes">
+                        <label><input type="checkbox" name="security" value="security"> Security System</label>
+                        <label><input type="checkbox" name="security" value="cctv"> CCTV</label>
+                        <label><input type="checkbox" name="security" value="doorman"> Doorman</label>
+                        <label><input type="checkbox" name="security" value="gated"> Gated Community</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Property Age Card -->
+                  <div class="filter-card">
+                    <div class="filter-card-header">
+                      <i class="fi fi-rr-home"></i>
+                      <h4>Property Age</h4>
+                    </div>
+                    <div class="filter-card-body">
+                      <select id="property-age" name="property-age">
+                        <option value="">Any</option>
+                        <option value="new">New Construction</option>
+                        <option value="5">Up to 5 Years</option>
+                        <option value="10">Up to 10 Years</option>
+                        <option value="20">Up to 20 Years</option>
+                        <option value="21">Over 20 Years</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <!-- Energy Rating Card -->
+                  <div class="filter-card">
+                    <div class="filter-card-header">
+                      <i class="fi fi-rr-bolt"></i>
+                      <h4>Energy Rating</h4>
+                    </div>
+                    <div class="filter-card-body">
+                      <select id="energy-rating" name="energy-rating">
+                        <option value="">Any</option>
+                        <option value="a">A (Very Efficient)</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="d">D</option>
+                        <option value="e">E or lower</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -581,5 +935,68 @@
     <script src="js/main.js"></script>
     <!-- JavaScript Files -->
     <script src="js/catalog-search.js"></script>
-  </body>
+    <!-- Add jQuery UI for sliders if not already included -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  
+  <!-- JavaScript for the new filter functionality -->
+  <script>
+    $(document).ready(function() {
+      // Initialize price range slider
+      $("#price-slider").slider({
+        range: true,
+        min: 100000,
+        max: 1000000,
+        values: [100000, 500000],
+        slide: function(event, ui) {
+          $("#price-min-value").text("$" + (ui.values[0] / 1000) + "K");
+          $("#price-max-value").text("$" + (ui.values[1] / 1000) + "K");
+          $("#min-price").val(ui.values[0]);
+          $("#max-price").val(ui.values[1]);
+        }
+      });
+      
+      // Set initial price values
+      $("#price-min-value").text("$" + ($("#price-slider").slider("values", 0) / 1000) + "K");
+      $("#price-max-value").text("$" + ($("#price-slider").slider("values", 1) / 1000) + "K");
+      $("#min-price").val($("#price-slider").slider("values", 0));
+      $("#max-price").val($("#price-slider").slider("values", 1));
+      
+      // Initialize area range slider
+      $("#area-slider").slider({
+        range: true,
+        min: 0,
+        max: 1000,
+        values: [0, 500],
+        slide: function(event, ui) {
+          $("#area-min-value").text(ui.values[0] + " m²");
+          $("#area-max-value").text(ui.values[1] + " m²");
+          $("#min-area").val(ui.values[0]);
+          $("#max-area").val(ui.values[1]);
+        }
+      });
+      
+      // Set initial area values
+      $("#area-min-value").text($("#area-slider").slider("values", 0) + " m²");
+      $("#area-max-value").text($("#area-slider").slider("values", 1) + " m²");
+      $("#min-area").val($("#area-slider").slider("values", 0));
+      $("#max-area").val($("#area-slider").slider("values", 1));
+      
+      // Advanced filters toggle
+      $("#show-more-filters").click(function() {
+        $("#advanced-filters").slideToggle(300);
+        var $icon = $(this).find(".toggle-icon");
+        
+        if ($icon.text() === "+") {
+          $icon.text("-");
+          $(this).css("background-color", "#f0f0f0");
+        } else {
+          $icon.text("+");
+          $(this).css("background-color", "#f9f9f9");
+        }
+      });
+    });
+  </script>
+</body>
 </html>
