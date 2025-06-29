@@ -2,6 +2,7 @@
 function handleScroll() {
   const navbar = document.querySelector('.navbar-container');
   const backToTopBtn = document.getElementById('backToTopBtn');
+  const whatsappBtn = document.querySelector('.whatsapp-button');
   const scrollPosition = window.scrollY;
   
   // Add or remove scrolled class based on scroll position
@@ -14,9 +15,63 @@ function handleScroll() {
   // Show or hide back to top button
   if (scrollPosition > 300) {
     backToTopBtn.classList.add('visible');
+    // Make WhatsApp button visible too
+    if (whatsappBtn) {
+      whatsappBtn.classList.add('visible');
+    }
   } else {
     backToTopBtn.classList.remove('visible');
+    // Hide WhatsApp button too
+    if (whatsappBtn) {
+      whatsappBtn.classList.remove('visible');
+    }
   }
+}
+
+// Mobile menu functionality
+function setupMobileMenu() {
+  const burgerMenu = document.querySelector('.burger-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const closeMenu = document.querySelector('.mobile-menu-close');
+  const overlay = document.querySelector('.overlay');
+  const body = document.body;
+
+  // Open mobile menu
+  if (burgerMenu) {
+    burgerMenu.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+      overlay.classList.add('active');
+      body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    });
+  }
+
+  // Close mobile menu
+  if (closeMenu) {
+    closeMenu.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      body.style.overflow = ''; // Allow scrolling again
+    });
+  }
+
+  // Close menu when clicking on overlay
+  if (overlay) {
+    overlay.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      body.style.overflow = '';
+    });
+  }
+
+  // Close menu when clicking on a link
+  const mobileLinks = document.querySelectorAll('.mobile-nav ul li a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      body.style.overflow = '';
+    });
+  });
 }
 
 // Add scroll event listener
@@ -73,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check scroll position immediately on page load
   handleScroll();
   
+  // Initialize mobile menu functionality
+  setupMobileMenu();
+  
   // Add back to top button functionality
   const backToTopBtn = document.getElementById('backToTopBtn');
   if (backToTopBtn) {
@@ -83,7 +141,47 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+  
+  // Main page property search form filter buttons functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Toggle active class - if it has the class, remove it; otherwise, add it
+        this.classList.toggle('active');
+      });
+    });
+  }
 
+  // Status toggle functionality with animation (Sale/Rent)
+  const toggleOptions = document.querySelectorAll('.toggle-option');
+  
+  if (toggleOptions.length > 0) {
+    toggleOptions.forEach((option, index) => {
+      option.addEventListener('click', function() {
+        // Remove active class from all options
+        toggleOptions.forEach(opt => opt.classList.remove('active'));
+        // Add active class to clicked option
+        this.classList.add('active');
+        
+        // Get the parent container
+        const container = this.closest('.status-toggle');
+        
+        // Add or remove the second-active class based on which button was clicked
+        if (index === 1) {
+          container.classList.add('second-active');
+        } else {
+          container.classList.remove('second-active');
+        }
+        
+        // You can access the selected value with:
+        const selectedValue = this.getAttribute('data-value');
+        console.log('Selected status:', selectedValue);
+      });
+    });
+  }
+  
   // Currency dropdown functionality
   const currencyBtn = document.getElementById('currency-btn');
   const currencyMenu = document.getElementById('currency-menu');

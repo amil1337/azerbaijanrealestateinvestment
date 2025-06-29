@@ -40,11 +40,9 @@ function initGallery() {
       const imgSrc = thumbnailImg.src.replace('w=300', 'w=1200');
       
       // Animate image change
-      mainImage.style.opacity = '0.7';
       setTimeout(() => {
         mainImage.src = imgSrc;
-        mainImage.style.opacity = '1';
-      }, 200);
+      }, 100);
     });
   });
   

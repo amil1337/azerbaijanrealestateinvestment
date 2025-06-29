@@ -37,82 +37,88 @@
 
   <body>
     <!-- Navigation Bar -->
-    <header class="navbar">
-      <div class="container navbar-container">
-        <div class="logo">
-          <a href="index.html">
-            <img
-              src="assets/image.png"
-              alt="Azerbaijan Real Estate Investment Logo"
-              class="logo-img"
-            />
-          </a>
-        </div>
-        <div class="right-group">
-          <nav class="nav-links">
-            <ul>
-              <li><a href="catalog.html">Catalog</a></li>
-              <li><a href="about.html">About Company</a></li>
-              <li><a href="contact.html">Contact Info</a></li>
-              <li><a href="partners.html">Partners</a></li>
-            </ul>
-          </nav>
-          <div class="auth-button">
-            <div class="currency-dropdown">
-              <a
-                href="#"
-                class="btn-login btn-login-currency dropdown-toggle"
-                id="currency-btn"
-              >
-                <i class="fi fi-rr-dollar"></i>USD</a
-              >
-              <div class="dropdown-menu" id="currency-menu">
-                <a href="#" class="btn-login btn-login-currency dropdown-item"
-                  ><i class="fi fi-rs-ruble-sign"></i>RUB</a
-                >
-                
-                <a href="#" class="btn-login btn-login-currency dropdown-item"
-                  ><svg class="currency-svg-icon dirham-icon" stroke="#8b0000" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"/><path d="M8.5 19h-3.5"/><path d="M8.599 16.479a1.5 1.5 0 1 0 -1.099 2.521"/><path d="M7 4v9"/><path d="M15 13h1.888a1.5 1.5 0 0 0 1.296 -2.256l-2.184 -3.744"/><path d="M11 13.01v-.01"/></svg><span style="color: #8b0000;">AED</span></a
-                >
-                <a href="#" class="btn-login btn-login-currency dropdown-item"
-                  ><i class="fi fi-rr-lira-sign"></i>TRY</a
-                >
-              </div>
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <a href="index.html" class="logo-container">
+          <img src="assets/1.png" alt="Azerbaijan Real Estate Investment Logo" class="logo-img" />
+          <div class="logo-text">
+            <span class="blue-text">AZERBAIJAN</span>
+            <span class="red-text">REAL</span>
+            <span class="red-text">ESTATE</span>
+            <span class="blue-text">INVESTMENT</span>
+          </div>
+        </a>
+      </div>
+      <div class="right-group">
+        <nav class="nav-links">
+          <ul>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="contact.html">Contact Info</a></li>
+            <li><a href="partners.html">Partners</a></li>
+          </ul>
+        </nav>
+        <div class="auth-button">
+          <div class="currency-dropdown">
+            <a href="#" class="btn-login btn-login-currency dropdown-toggle" id="currency-btn">
+              <i class="fi fi-rr-dollar"></i>USD</a>
+            <div class="dropdown-menu" id="currency-menu">
+              <a href="#" class="btn-login btn-login-currency dropdown-item"><i class="fi fi-rs-ruble-sign"></i>RUB</a>
+
+              <a href="#" class="btn-login btn-login-currency dropdown-item"><svg class="currency-svg-icon dirham-icon"
+                  stroke="#b9171c" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none" stroke="none" />
+                  <path d="M8.5 19h-3.5" />
+                  <path d="M8.599 16.479a1.5 1.5 0 1 0 -1.099 2.521" />
+                  <path d="M7 4v9" />
+                  <path d="M15 13h1.888a1.5 1.5 0 0 0 1.296 -2.256l-2.184 -3.744" />
+                  <path d="M11 13.01v-.01" />
+                </svg><span style="color: #b9171c;">AED</span></a>
+              <a href="#" class="btn-login btn-login-currency dropdown-item"><i class="fi fi-rr-lira-sign"></i>TRY</a>
             </div>
-            <div class="currency-dropdown">
-              <a
-                href="#"
-                class="btn-login btn-login-currency dropdown-toggle"
-                id="language-btn"
-              >
-                <i class="fi fi-rr-globe"></i>English</a
-              >
-              <div class="dropdown-menu" id="language-menu">
-                
-                <a href="#" class="btn-login btn-login-currency dropdown-item"
-                  >Türkçe</a
-                >
-                <a href="#" class="btn-login btn-login-currency dropdown-item"
-                  >العربية</a
-                >
-                <a href="#" class="btn-login btn-login-currency dropdown-item"
-                  >Русский</a
-                >
-              </div>
+          </div>
+          <div class="currency-dropdown">
+            <a href="#" class="btn-login btn-login-currency dropdown-toggle" id="language-btn">
+              <i class="fi fi-rr-globe"></i>English</a>
+            <div class="dropdown-menu" id="language-menu">
+
+              <a href="#" class="btn-login btn-login-currency dropdown-item">Türkçe</a>
+              <a href="#" class="btn-login btn-login-currency dropdown-item">العربية</a>
+              <a href="#" class="btn-login btn-login-currency dropdown-item">Русский</a>
             </div>
+          </div>
+          <div class="burger-menu">
+            <i class="fi fi-rr-menu-burger"></i>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu-container">
+      <div class="mobile-menu-close">
+        <i class="fi fi-rr-x"></i>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="about.html">About Company</a></li>
+          <li><a href="contact.html">Contact Info</a></li>
+          <li><a href="partners.html">Partners</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
+  <div class="overlay"></div>
 
     <!-- Property Detail Hero Section -->
     <section class="property-detail-hero">
       <div class="container">
-        <div class="back-to-catalog">
-          <a href="catalog.html" class="back-link">
-            <i class="fi fi-rr-arrow-left"></i> Back to Catalog
-          </a>
-        </div>
         
         <div class="property-status-tag">For Rent</div>
         
@@ -367,39 +373,14 @@
               </div>
               <div class="agent-actions">
                 <a href="#" class="btn-secondary full-width">Contact Agent</a>
-                <a href="#" class="btn-outline full-width">Schedule Viewing</a>
               </div>
-            </div>
-            
-            <!-- Request Information Form -->
-            <div class="sidebar-card inquiry-card">
-              <h3>Request Information</h3>
-              <form class="inquiry-form">
-                <div class="form-group">
-                  <input type="text" placeholder="Full Name*" required>
-                </div>
-                <div class="form-group">
-                  <input type="email" placeholder="Email Address*" required>
-                </div>
-                <div class="form-group">
-                  <input type="tel" placeholder="Phone Number*" required>
-                </div>
-                <div class="form-group">
-                  <textarea placeholder="Your Message*" required rows="4">I'm interested in this property and would like to receive more information.</textarea>
-                </div>
-                <div class="form-group form-checkbox">
-                  <input type="checkbox" id="terms-agree" required>
-                  <label for="terms-agree">I agree to the privacy policy and terms of service</label>
-                </div>
-                <button type="submit" class="btn-primary full-width">Send Request</button>
-              </form>
             </div>
             
             <!-- Location Map -->
             <div class="sidebar-card map-card">
               <h3>Location</h3>
               <div class="map-container">
-                <img src="https://maps.googleapis.com/maps/api/staticmap?center=Badamdar,Baku,Azerbaijan&zoom=14&size=400x200&maptype=roadmap&markers=color:red%7CBadamdar,Baku,Azerbaijan&key=YOUR_API_KEY" alt="Property Location Map" class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.280781864239!2d49.95001604522693!3d40.404059361991294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030630131c5bbc9%3A0x550dbd6d25db51dc!2s8KM%20Topdan%20Bazar!5e1!3m2!1sen!2saz!4v1751219113154!5m2!1sen!2saz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
               <p class="location-address"><i class="fi fi-rr-marker"></i> Badamdar district, Baku, Azerbaijan</p>
               <div class="location-features">
@@ -531,89 +512,6 @@
       </div>
     </section>
 
-    <!-- Modal Gallery CSS -->
-    <style>
-      .gallery-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
-      }
-      
-      .gallery-slide {
-        display: none;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      .gallery-slide img {
-        max-width: 90%;
-        max-height: 80vh;
-        object-fit: contain;
-      }
-      
-      .gallery-modal-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-        z-index: 2100;
-      }
-      
-      .gallery-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: background 0.3s;
-      }
-      
-      .gallery-nav:hover {
-        background: rgba(255, 255, 255, 0.4);
-      }
-      
-      .gallery-nav.prev {
-        left: 20px;
-      }
-      
-      .gallery-nav.next {
-        right: 20px;
-      }
-      
-      .gallery-counter {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 5px 15px;
-        border-radius: 20px;
-      }
-    </style>
-    
     <!-- Footer -->
     <footer class="site-footer">
       <div class="container">

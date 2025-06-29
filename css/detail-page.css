@@ -87,10 +87,6 @@
   transition: transform 0.5s;
 }
 
-.gallery-main:hover .gallery-featured-img {
-  transform: scale(1.03);
-}
-
 .gallery-thumbnails {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -239,12 +235,11 @@
   padding: 15px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: none !important;
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: none !important;
 }
 
 .feature-item i {
@@ -395,10 +390,12 @@
   display: inline-block;
   transition: background-color 0.3s;
   text-decoration: none;
+  border: 1px solid #8b00003b;
 }
 
 .btn-secondary:hover {
-  background-color: #6a0000;
+  background-color: transparent;
+  color: #8b0000;
 }
 
 .btn-outline {
@@ -551,10 +548,6 @@
   transition: transform 0.3s;
 }
 
-.property-card:hover {
-  transform: translateY(-10px);
-}
-
 .property-image {
   position: relative;
   height: 220px;
@@ -700,4 +693,84 @@
   .detail-value {
     width: 100%;
   }
+}
+
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.gallery-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-slide img {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.gallery-nav:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.gallery-nav.prev {
+  left: 20px;
+}
+
+.gallery-nav.next {
+  right: 20px;
+}
+
+.gallery-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  border-radius: 20px;
 }
