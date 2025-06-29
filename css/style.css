@@ -5,7 +5,7 @@
 }
 
 ::selection {
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white;
 }
 
@@ -100,10 +100,11 @@ a {
   transform: translateX(-100%);
   opacity: 0.05; /* Start with very low opacity */
   visibility: hidden;
-  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.1s;
+  transition: transform 0.5s ease, opacity 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19), visibility 0.1s;
+
   margin-left: 65px;
   z-index: 1;
-  pointer-events: none; /* Prevent text from blocking clicks */
+  /* pointer-events enabled to allow text to be clickable */
   width: auto;
 }
 
@@ -122,7 +123,7 @@ a {
 }
 
 .logo-text .red-text {
-  color: #e61e25;
+  color: #b9171c;
 }
 
 .right-group {
@@ -153,13 +154,13 @@ a {
   border-radius: 20px;
   display: inline-block;
   text-align: center;
-  border: 1px solid #e61e2515;
+  border: 1px solid #b9171c15;
 }
 
 .nav-links a:hover {
   color: white;
-  background-color: #e61e25;
-  border-color: #e61e25;
+  background-color: #b9171c;
+  border-color: #b9171c;
 }
 
 .btn-login {
@@ -182,7 +183,7 @@ a {
 }
 
 .btn-login:hover {
-  background-color: #e61e25; /* Brand color on hover */
+  background-color: #b9171c; /* Brand color on hover */
   color: white;
 }
 
@@ -193,7 +194,7 @@ a {
 
 .btn-login-currency {
     background-color: white;
-    color: #e61e25;
+    color: #b9171c;
     display: inline-block;
     text-align: center;
     min-width: 120px;
@@ -209,7 +210,7 @@ a {
 
 .dropdown-menu {
   position: absolute;
-  color: #e61e25 !important;
+  color: #b9171c !important;
   right: 0;
   top: 100%;
   background-color: #ffffff;
@@ -246,7 +247,7 @@ a {
   border: none;
   margin: 0;
   padding: 0.5rem 1.2rem;
-  color: #e61e25;
+  color: #b9171c;
   font-weight: 500;
   font-size: 0.95rem;
   font-family: "Inter Tight", sans-serif;
@@ -273,7 +274,7 @@ a {
 }
 
 .dropdown-item:hover {
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white !important;
 }
 
@@ -369,7 +370,7 @@ a {
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white;
   padding: 0.3rem 1rem;
   border-radius: 20px;
@@ -401,7 +402,7 @@ a {
 
 .property-location i {
   margin-right: 0.4rem;
-  color: #e61e25;
+  color: #b9171c;
 }
 
 .property-features {
@@ -424,7 +425,7 @@ a {
 .property-price {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #e61e25;
+  color: #b9171c;
 }
 
 .show-all-container {
@@ -433,16 +434,16 @@ a {
 
 .btn-show-all {
   display: inline-block;
-  color: #e61e25;
+  color: #b9171c;
   padding: 0.8rem 2.5rem;
   border-radius: 30px;
   font-weight: 500;
-  border: 1px solid #e61e25;
+  border: 1px solid #b9171c;
   transition: all 0.3s ease;
 }
 
 .btn-show-all:hover {
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white;
 }
 
@@ -650,7 +651,7 @@ select.search-select option {
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  background: #e61e25; /* Brand dark red color */
+  background: #b9171c; /* Brand dark red color */
   border: none;
   color: white;
   font-size: 16px;
@@ -664,12 +665,12 @@ select.search-select option {
   transition: all 0.3s ease;
   z-index: 10;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  border: 1px solid #e61e25;
+  border: 1px solid #b9171c;
 }
 
 .search-button:hover {
   background: transparent;
-  color: #e61e25;
+  color: #b9171c;
 }
 
 /* WhatsApp Button */
@@ -677,7 +678,7 @@ select.search-select option {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #e61e25;
+  background-color: #b9171c;
   border: none;
   font-weight: 600;
   display: flex;
@@ -704,7 +705,7 @@ select.search-select option {
   width: 140px;
   border-radius: 50px;
   transition-duration: 0.3s;
-  background-color: #e61e25;
+  background-color: #b9171c;
   align-items: center;
 }
 
@@ -734,7 +735,7 @@ select.search-select option {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #e61e25;
+  background-color: #b9171c;
   border: none;
   font-weight: 600;
   display: flex;
@@ -769,7 +770,7 @@ select.search-select option {
   width: 140px;
   border-radius: 50px;
   transition-duration: 0.3s;
-  background-color: #e61e25;
+  background-color: #b9171c;
   align-items: center;
 }
 
@@ -842,7 +843,7 @@ select.search-select option {
 }
 
 .testimonial-quote i {
-  color: #e61e25;
+  color: #b9171c;
   font-size: 2rem;
   opacity: 0.2;
   position: absolute;
@@ -971,12 +972,12 @@ select.search-select option {
 
 .btn-primary {
   display: inline-block;
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white;
   padding: 0.8rem 2.5rem;
   border-radius: 50px;
   font-weight: 500;
-  border: 1px solid #e61e25;
+  border: 1px solid #b9171c;
   transition: all 0.3s ease;
 }
 
@@ -1014,7 +1015,7 @@ select.search-select option {
   bottom: 0;
   height: 2px;
   width: 40px;
-  background-color: #e61e25;
+  background-color: #b9171c;
 }
 
 .footer-logo {
@@ -1050,7 +1051,7 @@ select.search-select option {
 }
 
 .social-links a:hover {
-  background-color: #e61e25;
+  background-color: #b9171c;
 }
 
 .footer-links {
@@ -1070,7 +1071,7 @@ select.search-select option {
 }
 
 .footer-links a:hover {
-  color: #e61e25;
+  color: #b9171c;
 }
 
 .contact-info ul {
@@ -1087,7 +1088,7 @@ select.search-select option {
 
 .contact-info i {
   margin-right: 12px;
-  color: #e61e25;
+  color: #b9171c;
 }
 
 .footer-bottom {
@@ -1116,7 +1117,7 @@ select.search-select option {
 }
 
 .footer-bottom-links a:hover {
-  color: #e61e25;
+  color: #b9171c;
 }
 
 @media (max-width: 992px) {
@@ -1205,7 +1206,7 @@ select.search-select option {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background-color: #e61e25;
+  background-color: #b9171c;
 }
 
 .about-introduction {
@@ -1233,7 +1234,7 @@ select.search-select option {
 }
 
 .about-introduction strong {
-  color: #e61e25;
+  color: #b9171c;
   font-weight: 600;
 }
 
@@ -1285,7 +1286,7 @@ select.search-select option {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #e61e25;
+  background-color: #b9171c;
 }
 
 .activity-areas {
@@ -1346,7 +1347,7 @@ select.search-select option {
   font-family: "Inter Tight", sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #e61e25;
+  color: #b9171c;
   margin-bottom: 1.2rem;
   position: relative;
   padding-bottom: 0.8rem;
@@ -1359,7 +1360,7 @@ select.search-select option {
   left: 0;
   width: 50px;
   height: 2px;
-  background-color: #e61e25;
+  background-color: #b9171c;
 }
 
 .activity-content p {
@@ -1396,7 +1397,7 @@ select.search-select option {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #e61e25;
+  background-color: #b9171c;
 }
 
 @media (max-width: 992px) {
@@ -1503,7 +1504,7 @@ select.search-select option {
 }
 
 .advantage-number {
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white;
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
@@ -1678,7 +1679,7 @@ select.search-select option {
   justify-content: center;
   margin-right: 1rem;
   flex-shrink: 0;
-  color: #e61e25;
+  color: #b9171c;
   font-size: 1.2rem;
   position: relative;
 }
@@ -1752,7 +1753,7 @@ select.search-select option {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #e61e25;
+  border-color: #b9171c;
   box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
 }
 
@@ -1764,12 +1765,12 @@ select.search-select option {
 
 .contact-form-container .btn-primary {
   border-radius: 10px;
-  border: 1px solid #e61e256f;
+  border: 1px solid #b9171c6f;
 }
 
 .contact-form-container .btn-primary:hover {
   background: transparent;
-  color: #e61e25 !important;
+  color: #b9171c !important;
 }
 
 .form-checkbox input {
@@ -1849,7 +1850,7 @@ select.search-select option {
   bottom: 0;
   height: 2px;
   width: 60px;
-  background-color: #e61e25;
+  background-color: #b9171c;
 }
 
 .partners-row {
@@ -1908,7 +1909,7 @@ select.search-select option {
   font-family: "Inter Tight", sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #e61e25;
+  color: #b9171c;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1993,7 +1994,7 @@ select.search-select option {
 }
 
 .partner-benefits i {
-  color: #e61e25;
+  color: #b9171c;
   font-size: 1rem;
   margin-top: 0.2rem;
 }
@@ -2164,7 +2165,7 @@ select.search-select option {
 .service-icon {
   width: 80px;
   height: 80px;
-  background: #e61e25; /* Brand dark red color */
+  background: #b9171c; /* Brand dark red color */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2366,7 +2367,7 @@ select.search-select option {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e61e25" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23b9171c" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
   background-repeat: no-repeat;
   background-position: calc(100% - 12px) center;
   background-size: 12px;
@@ -2376,7 +2377,7 @@ select.search-select option {
 .search-group select:focus,
 .search-group input:focus {
   outline: none;
-  border-color: #e61e25;
+  border-color: #b9171c;
   box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
 }
 
@@ -2405,7 +2406,7 @@ select.search-select option {
 .features-checkboxes input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  accent-color: #e61e25;
+  accent-color: #b9171c;
   cursor: pointer;
   margin: 0;
 }
@@ -2432,19 +2433,19 @@ select.search-select option {
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  border: 1px solid #e61e2562 !important;
+  border: 1px solid #b9171c62 !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .search-btn {
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white;
   flex: 2;
 }
 
 .search-btn:hover {
   background-color: white;
-  color: #e61e25;
+  color: #b9171c;
 }   
 
 .reset-btn {
@@ -2455,7 +2456,7 @@ select.search-select option {
 }
 
 .reset-btn:hover {
-  background-color: #e61e25;
+  background-color: #b9171c;
   color: white;
 }
 
@@ -2505,7 +2506,7 @@ select.search-select option {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e61e25" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23b9171c" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
   background-repeat: no-repeat;
   background-position: calc(100% - 12px) center;
   background-size: 12px;
