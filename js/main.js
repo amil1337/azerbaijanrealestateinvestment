@@ -1,6 +1,7 @@
 // Handle scroll events for navbar background color and back to top button
 function handleScroll() {
   const navbar = document.querySelector('.navbar-container');
+  const navbarOuter = document.querySelector('.navbar');
   const backToTopBtn = document.getElementById('backToTopBtn');
   const whatsappBtn = document.querySelector('.whatsapp-button');
   const scrollPosition = window.scrollY;
@@ -8,19 +9,21 @@ function handleScroll() {
   // Add or remove scrolled class based on scroll position
   if (scrollPosition > 30) {
     navbar.classList.add('scrolled');
+    if (navbarOuter) navbarOuter.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
+    if (navbarOuter) navbarOuter.classList.remove('scrolled');
   }
   
   // Show or hide back to top button
   if (scrollPosition > 300) {
-    backToTopBtn.classList.add('visible');
+    if (backToTopBtn) backToTopBtn.classList.add('visible');
     // Make WhatsApp button visible too
     if (whatsappBtn) {
       whatsappBtn.classList.add('visible');
     }
   } else {
-    backToTopBtn.classList.remove('visible');
+    if (backToTopBtn) backToTopBtn.classList.remove('visible');
     // Hide WhatsApp button too
     if (whatsappBtn) {
       whatsappBtn.classList.remove('visible');
@@ -77,22 +80,9 @@ function setupMobileMenu() {
 // Add scroll event listener
 window.addEventListener('scroll', handleScroll);
 
-// When the user scrolls down, change the navbar background color
-window.addEventListener("scroll", function() {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 20) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
-
-// Check on page load too
+// Check scroll position on page load too
 window.addEventListener("load", function() {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 20) {
-    navbar.classList.add("scrolled");
-  }
+  handleScroll();
 });
 
 // Back to top button functionality
